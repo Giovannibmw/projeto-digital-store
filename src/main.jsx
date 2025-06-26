@@ -1,11 +1,16 @@
-// src/main.jsx
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import AppRouter from './routes'; // Importação do router
+import { BrowserRouter } from 'react-router-dom';
 import './index.css';
+import { CartProvider } from './contexts/cartContext';
+import App from './app';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <AppRouter />
+    <BrowserRouter>
+     <CartProvider>
+      <App />
+     </CartProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
